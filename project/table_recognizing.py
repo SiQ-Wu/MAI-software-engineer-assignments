@@ -73,8 +73,8 @@ def ImgtoMat(img,row,column):
     
     img = cv2.threshold(~imgGray, 128, 255, cv2.THRESH_BINARY)[1]
     
-    cv2.imshow("1",img)
-    cv2.waitKey(0)
+    # cv2.imshow("1",img)
+    # cv2.waitKey(0)
     
     h,w = img.shape
     cellWidth = int(w/column)
