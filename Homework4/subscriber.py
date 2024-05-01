@@ -20,15 +20,17 @@ def on_connect(client, userdata, flags, rc):
         print(f"Failed to connect, result code {0}".format(str(rc)))
         
 def on_message(client, userdata, msg):
+
     data = msg.payload.decode('utf-8').split(' ')
     t.append(float(data[0]))
     x.append(float(data[1]))
     y.append(float(data[2]))
     vx.append(float(data[3]))
     vy.append(float(data[4]))
-    print("t={}\tx={}\ty={}\tvx={}\tvy={}\t"
-          .format(data[0],data[1],data[2],data[3],data[4]))
+    print("t={}\tx={}\ty={}\tvx={}\tvy={}\n".format(data[0],data[1],data[2],data[3],data[4]))
+    time.sleep(1)
 
+    
 def mqtt_sub():
     client = mqtt.Client()
     client.on_connect = on_connect
